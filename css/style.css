@@ -1,26 +1,43 @@
+body {
+    background-color: #282a36;
+}
+
 .calc {
-    background-color: darkgray;
-    height: 450px;
-    width: 350px;
+    background-color: #44475a;
+    height: auto;
+    width: 250px;
     margin: 0 auto;
     align-items: center;
-    border-color: black;
+    border-color: #bd93f9;
     border-style: solid;
     border-width: 8px;
+    border-radius: 8px;
 }
 
 .buttons {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+
+    padding: 10%;
+    padding-top: 0px;
+    padding-bottom: 25px;
+    margin: 0 auto;
 }
 
 .frame {
     background-color: white;
+    margin: 10%;
+    margin-bottom: 15px;
 }
 
 #output {
     display: flex;
     flex: auto;
     right: 5px;
+}
+
+button {
+    height: 25%;
+    width: 25%;
 }
