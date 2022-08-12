@@ -43,12 +43,7 @@ function useCalc (e) {
     else if (e.textContent == "=") {
         let str = inDisplay.textContent;
         let nums = str.split(/\D/g);
-        console.log(nums);
         let operand = str.split(/[0-9]+/g);
-        console.log(operand);
-       /* let num1 = nums[0];
-        let num2 = nums[1];
-        let op = operand[1]; */
         let num1, num2, op;
         let result = 0;
         for (let i = 1; i < operand.length-1; i++) {
@@ -66,6 +61,9 @@ function useCalc (e) {
         }
         if (result == NaN || result == undefined) {
             outDisplay.textContent = "ERROR";
+        }
+        else if (num2 == 0 && op == "/") {
+            outDisplay.textContent = "DIV BY ZERO";
         }
         else {
             console.log(result); 
