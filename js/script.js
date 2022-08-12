@@ -1,5 +1,5 @@
 function add(a,b) {
-    return a+b;
+    return (+a)+(+b);
 }
 
 function subtract(a,b) {
@@ -15,18 +15,21 @@ function divide(a, b) {
 }
 
 function operate(op, a, b) {
+    console.log(op+" "+a+" "+b);
     if (op == "+") {
-        add(a,b);
+        return add(a, b);
     } else if (op == "-") {
-        subtract(a,b);
+        return subtract(a, b);
     } else if (op == "*") {
-        multiply(a,b);
+        return multiply(a, b);
     } else if (op == "/") {
-        divide (a,b);
+        return divide (a, b);
     }
 }
 
 let inDisplay = document.querySelector("#input");
+let outDisplay = document.querySelector("#output");
+
 const buttons = document.querySelectorAll(".num").forEach(e => {
     e.addEventListener('click', () => {
         useCalc(e);
@@ -36,14 +39,22 @@ const buttons = document.querySelectorAll(".num").forEach(e => {
 function useCalc (e) {
     console.log(e.textContent);
     if (e.textContent == "Clear") {
-        inDisplay.textContent = "0";
-        console.log("first")       
-    } else if (inDisplay.textContent != "0"){
-        inDisplay.append(e.textContent);
-        console.log("third")
-    } else if (inDisplay.textContent = "0") {
-        inDisplay.textContent = e.textContent;
-        console.log("second")
+        inDisplay.textContent = "0";   
     }
-
+    else if (e.textContent == "=") {
+        let str = inDisplay.textContent;
+        let nums = str.split(/\D/);
+        let operand = str.split(/[0-9]+/);
+        let num1 = nums[0];
+        let num2 = nums[1];
+        let op = operand[1];
+        console.log(operate(op, num1, num2))
+        outDisplay.textContent = operate(op, num1, num2);
+    }    
+    else if (inDisplay.textContent != "0"){
+        inDisplay.append(e.textContent);
+    }   
+    else if (inDisplay.textContent == "0") {
+        inDisplay.textContent = e.textContent;
+    }
 }
