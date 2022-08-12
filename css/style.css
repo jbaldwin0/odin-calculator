@@ -26,15 +26,23 @@ body {
 }
 
 .frame {
-    background-color: white;
+
     margin: 10%;
     margin-bottom: 15px;
 }
 
 #output {
-    display: flex;
-    flex: auto;
-    right: 5px;
+    text-align: right;
+    padding: 4px;
+    background-color: #f8f8f2;
+    margin-bottom: 0px;
+}
+
+#input {
+    text-align: right;
+    padding: 4px;
+    background-color: #f8f8f2;
+    margin-top: 0px;
 }
 
 button {
