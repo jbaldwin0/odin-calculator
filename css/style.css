@@ -35,6 +35,10 @@ body {
     padding: 4px;
     background-color: #f8f8f2;
     margin-bottom: 0px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
 }
 
 #input {
@@ -43,6 +47,10 @@ body {
     background-color: #f8f8f2;
     margin-top: 0px;
     border-top: 4px solid #44475a;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
 }
 
 button {
